@@ -224,13 +224,13 @@ spec:
 
 访问 http://PUBLIC_IP:NODE_PORTS 验证
 
-我的是 http://lizhongyuan.net
+我的公网DNS是 http://lizhongyuan.net
 
 
 
 #### 参考：
 
-[Kubernetes 中文文档]: https://kubernetes.io/zh/
-[Github 地址]: https://github.com/ConserveLee/blog-pipeline
-[Rancher  中文手册]: https://www.bookstack.cn/read/rancher-v2.x/0de5eb5c4056b8f6.md
+- [Kubernetes 中文文档](https://kubernetes.io/zh/)
+- [Github 地址](https://github.com/ConserveLee/blog-pipeline)
+- [Rancher  中文手册](https://www.bookstack.cn/read/rancher-v2.x/0de5eb5c4056b8f6.md)
 
