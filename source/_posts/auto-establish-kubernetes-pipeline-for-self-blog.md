@@ -10,13 +10,11 @@ tags:
 
 
 
-# 通过 Kubernetes 自动化构建部署 Blog
-
 正所谓工欲善其事，必先利其器。根据费曼学习法，写博客可以很好的技术积累。而 Kubernetes 可以让你自动化部署各种应用，下面以 Hexo 作为示例。
 
 
 
-## 技术栈
+# 技术栈
 
 - Hexo & Node.js
 - Git
@@ -31,19 +29,19 @@ tags:
 
 
 
-## STEP 1 创建 Kubenetes 集群
+# STEP 1 创建 Kubenetes 集群
 
 因为篇幅问题，详细请参考 [快速创建 Kubernetes 集群](/2019/11/19/build-rancher-kubernetes/)
 
 
 
-## STEP 2 添加 Docker Hub 凭证
+# STEP 2 添加 Docker Hub 凭证
 
-#### STEP 2.1 注册 Docker Hub
+## STEP 2.1 注册 Docker Hub
 
 ![Docker Hub](/assets/pipeline/a-1.png)
 
-#### STEP 2.2 添加凭证
+## STEP 2.2 添加凭证
 
 ![添加凭证](/assets/pipeline/a-2.png)
 
@@ -51,9 +49,9 @@ tags:
 
 
 
-## STEP 3 编写自动化构建样本
+# STEP 3 编写自动化构建样本
 
-#### STEP 3.1 样本文件目录
+## STEP 3.1 样本文件目录
 
 - **source**  Hexo 的资源目录
 - **themes** Hexo 的主题目录
@@ -66,15 +64,15 @@ tags:
 
 
 
-#### STEP 3.2 编写配置文件
+## STEP 3.2 编写配置文件
 
-##### 目的：
+### **目的**：
 
 在本地写好 MarkDown 文件，Git 推送即可自动化构建&部署到 kubernetes 集群中。
 
 
 
-##### pipeline 术语：
+### **pipeline 术语**：
 
 - **Pipeline** 定义了构建、测试和部署代码的一个过程
 
@@ -86,7 +84,7 @@ tags:
 
   
 
-##### pipeline 思路：
+### **pipeline 思路**：
 
 1. 监听 Master 分支上的推送动作
 
@@ -98,7 +96,7 @@ tags:
 
 
 
-#### step 3.3 添加 Git 项目
+## step 3.3 添加 Git 项目
 
 **dockerfile**
 
@@ -200,15 +198,15 @@ spec:
 
 
 
-#### STEP 3.4 新建 pipeline
+## STEP 3.4 新建 pipeline
 
-##### STEP 3.4.1 配置版本控制应用
+### **STEP 3.4.1 配置版本控制应用**
 
 ![认证](/assets/pipeline/a-3.png)
 
 在 集群->default->资源->流水线中添加 github 应用凭证
 
-##### STEP 3.4.2 设置代码仓库 & 运行示例 Pipeline
+### **STEP 3.4.2 设置代码仓库 & 运行示例 Pipeline**
 
 ![代码库](/assets/pipeline/a-4.png)
 
@@ -218,7 +216,7 @@ spec:
 
 
 
-## STEP 4 验证
+# STEP 4 验证
 
 ![pipeline](/assets/pipeline/a-6.png)
 
@@ -238,9 +236,19 @@ stages 均跑完后，可以在 Rancher 中看到如下 Pod
 
 
 
-#### 参考：
 
-- [Kubernetes 中文文档](https://kubernetes.io/zh/)
-- [Github 地址](https://github.com/ConserveLee/blog-pipeline)
-- [Rancher  中文手册](https://www.bookstack.cn/read/rancher-v2.x/0de5eb5c4056b8f6.md)
+
+
+
+
+
+
+
+参考**：
+
+
+
+- **[Kubernetes 中文文档](https://kubernetes.io/zh/)**
+- **[Github 地址](https://github.com/ConserveLee/blog-pipeline)**
+- **[Rancher  中文手册](https://www.bookstack.cn/read/rancher-v2.x/0de5eb5c4056b8f6.md)**
 

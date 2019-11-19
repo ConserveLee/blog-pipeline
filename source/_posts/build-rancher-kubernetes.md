@@ -7,7 +7,7 @@ tags:
  - devops
 ---
 
-# 快速创建 Kubernetes 集群教程
+
 
 众所周知 Kubernetes 的手动部署比较麻烦而且坑很多，对入门非常不友好。而Rancher作为开源的生产级容器管理平台，足够稳定的同时，功能完整、UI丰富且操作文档化，更重要是支持中文，便于快速创建/管理 Kubernetes 集群。
 
@@ -33,13 +33,13 @@ tags:
 
 确认以下每一步均正常执行
 
-#### STEP 1.1 卸载旧版本
+### STEP 1.1 卸载旧版本
 
 ```shell
 $ sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 
-#### STEP 1.2 Apt install repository
+### STEP 1.2 Apt install repository
 
 ```shell
 # 1. 更新repo
@@ -61,14 +61,14 @@ $ sudo add-apt-repository \
 
 ```
 
-#### STEP 1.3 Apt install Docker Engine 
+### STEP 1.3 Apt install Docker Engine 
 
 ```shell
 $ sudo apt-get update
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
-#### STEP 1.4 验证 Docker 版本
+### STEP 1.4 验证 Docker 版本
 
 ```shell
 $ docker --version
@@ -87,27 +87,27 @@ $ sudo docker run -d -v <主机路径>:/var/lib/rancher/ --restart=unless-stoppe
 
 ## STEP 3 添加 Kubernetes
 
-#### STEP 3.1 进入 Rancher UI
+### STEP 3.1 进入 Rancher UI
 
 ![login](/assets/pipeline/login.jpeg)
 
 
 
-#### STEP 3.2 添加集群
+### STEP 3.2 添加集群
 
-##### STEP 3.2.1 点击添加集群按钮
+#### **STEP 3.2.1 点击添加集群按钮**
 
 ![添加](/assets/pipeline/r-1.jpeg)
 
-##### STEP 3.2.2 集群类型选择自定义
+#### **STEP 3.2.2 集群类型选择自定义**
 
 ![自定义](/assets/pipeline/r-2.jpeg)
 
-##### STEP 3.2.3 输入集群名
+#### **STEP 3.2.3 输入集群名**
 
 ![集群名](/assets/pipeline/r-3.jpeg)
 
-##### STEP 3.2.4 添加主机角色
+#### **STEP 3.2.4 添加主机角色**
 
 如果只有一台机子的话，需要都选上，复制到 kubernetes 主机 bash 中执行
 
