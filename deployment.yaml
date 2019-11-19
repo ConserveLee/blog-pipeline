@@ -1,0 +1,38 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hexo-service
+spec:
+  selector:
+    app: hexo
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 4000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hexo
+  labels:
+    app: hexo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hexo
+  template:
+    metadata:
+      labels:
+        app: hexo
+    spec:
+      imagePullSecrets:
+        - name: pipeline-docker-registry
+      containers:
+        - name: hexo
+          image: quanzhilong/hexo:v1.0.1
+          ports:
+            - containerPort: 4000
+          command: ["/bin/sh"]
+          args: ["-c", "hexo server"]
