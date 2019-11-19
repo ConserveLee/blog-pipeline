@@ -1,6 +1,6 @@
 ---
 title: 通过 Kubernetes 自动化构建 Blog
-date: 2019-11-09 18:31:15
+date: 2019-11-19 18:31:15
 abstract: 自动化构建的一个演示 demo
 tags:
  - kubernetes

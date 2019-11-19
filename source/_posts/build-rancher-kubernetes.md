@@ -1,6 +1,6 @@
 ---
 title: 快速创建 Kubernetes 集群教程
-date: 2019-11-09 17:41:21
+date: 2019-11-19 17:41:21
 abstract: 如何快速上车
 tags:
  - kubernetes
