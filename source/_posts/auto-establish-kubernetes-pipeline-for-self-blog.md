@@ -134,7 +134,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./dockerfile
       buildContext: .
-      tag: quanzhilong/hexo:v1.0.1
+      tag: quanzhilong/hexo:v1.0.${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
       registry: index.docker.io # Docker Hub地址
 - name: deploy # 部署实例
@@ -187,7 +187,7 @@ spec:
         - name: pipeline-docker-registry
       containers:
         - name: hexo
-          image: quanzhilong/hexo:v1.0.1
+          image: quanzhilong/hexo:v1.0.${CICD_EXECUTION_SEQUENCE}
           ports:
             - containerPort: 4000
           command: ["/bin/sh"]
@@ -220,7 +220,19 @@ spec:
 
 ## STEP 4 验证
 
-访问 http://PUBLIC_IP:NODE_PORTS 验证
+![pipeline](/assets/pipeline/a-6.png)
+
+运行 Pipeline 后，可以查看详细日志
+
+![执行成功](/assets/pipeline/a-7.png)
+
+stages 均跑完后，可以在 Rancher 中看到如下 Pod
+
+此时可以访问 http://公网IP:NODE_PORT 验证
+
+
+
+
 
 我的公网DNS是 http://lizhongyuan.net
 
