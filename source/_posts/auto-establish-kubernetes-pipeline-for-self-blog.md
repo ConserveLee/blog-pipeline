@@ -33,9 +33,7 @@ tags:
 
 ## STEP 1 创建 Kubenetes 集群
 
-因为篇幅问题，详细请参考
-
-[快速创建 Kubernetes 集群]: /2019/11/19/build-rancher-kubernetes/
+因为篇幅问题，详细请参考 [快速创建 Kubernetes 集群](/2019/11/19/build-rancher-kubernetes/)
 
 
 
