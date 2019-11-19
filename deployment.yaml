@@ -31,7 +31,7 @@ spec:
         - name: pipeline-docker-registry
       containers:
         - name: hexo
-          image: quanzhilong/hexo:v1.0.1
+          image: quanzhilong/hexo:v1.0.${CICD_EXECUTION_SEQUENCE}
           ports:
             - containerPort: 4000
           command: ["/bin/sh"]

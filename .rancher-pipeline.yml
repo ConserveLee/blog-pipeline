@@ -4,7 +4,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./dockerfile
       buildContext: .
-      tag: quanzhilong/hexo:v1.0.1
+      tag: quanzhilong/hexo:v1.0.${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
       registry: index.docker.io
 - name: deploy
